@@ -1,6 +1,6 @@
 # Loading Screen Skip
 For Game Version: 0.24.0  
-Mod Version: 0.0.0  
+Mod Version: 0.0.1  
 Developed by: 18107  
 Host/Client Requirements: Client
 
