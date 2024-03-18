@@ -28,4 +28,4 @@ Ensure that you have [BepInEx 5](https://thunderstore.io/c/void-crew/p/BepInEx/B
 
 ✔️ : Mod install : **Unzip the contents into the BepInEx plugin directory**
 
-Drag and drop `[fillme].dll` into `Void Crew\BepInEx\plugins`
+Drag and drop `LoadingScreenSkip.dll` into `Void Crew\BepInEx\plugins`
