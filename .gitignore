@@ -359,3 +359,15 @@ FodyWeavers.xsd
 
 /bin*
 /obj*
+/LoadingScreenSkip/bin/Debug/net472/LoadingScreenSkip.dll
+/LoadingScreenSkip/bin/Debug/net472/LoadingScreenSkip.pdb
+/LoadingScreenSkip/obj/Debug/net472/LoadingScreenSkip.AssemblyInfo.cs
+/LoadingScreenSkip/obj/Debug/net472/LoadingScreenSkip.csproj.AssemblyReference.cache
+/LoadingScreenSkip/obj/Debug/net472/LoadingScreenSkip.csproj.CoreCompileInputs.cache
+/LoadingScreenSkip/obj/Debug/net472/LoadingScreenSkip.AssemblyInfoInputs.cache
+/LoadingScreenSkip/obj/Debug/net472/LoadingScreenSkip.dll
+/LoadingScreenSkip/obj/Debug/net472/LoadingScreenSkip.pdb
+/LoadingScreenSkip/obj/Debug/net472/MyPluginInfo.cs
+/LoadingScreenSkip/obj/LoadingScreenSkip.csproj.nuget.dgspec.json
+/LoadingScreenSkip/obj/project.assets.json
+/LoadingScreenSkip/obj/project.nuget.cache
