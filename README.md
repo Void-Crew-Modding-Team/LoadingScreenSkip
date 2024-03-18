@@ -5,7 +5,7 @@
 # LoadingScreenSkip
 
 Version 0.0.3  
-Developed by 18107, Dragon
+Developed by 18107, Dragon  
 Requires VoidManager 1.0.1
 
 ---------------------
