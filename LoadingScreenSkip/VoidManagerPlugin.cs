@@ -6,8 +6,10 @@ namespace LoadingScreenSkip
     {
         public override MultiplayerType MPType => MultiplayerType.Client;
 
-        public override string Author => "18107, Dragon";
+        public override string Author => MyPluginInfo.PLUGIN_AUTHORS;
 
-        public override string Description => "Skips various loading screens.";
+        public override string Description => MyPluginInfo.PLUGIN_DESCRIPTION;
+
+        public override string ThunderstoreID => MyPluginInfo.PLUGIN_THUNDERSTORE_ID;
     }
 }

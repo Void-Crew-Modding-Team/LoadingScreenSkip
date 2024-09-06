@@ -1,10 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>LoadingScreenSkip</AssemblyName>
-    <Description>Template</Description>
-    <Version>0.0.3</Version>
+    <Description>Skips intro cutscenes and various loading screens. Client-Side.</Description>
+    <Version>0.0.4</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -13,22 +12,21 @@
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
     <RootNamespace>LoadingScreenSkip</RootNamespace>
+    <AssemblyTitle>Skips intro cutscenes and various loading screens. Client-Side.</AssemblyTitle>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="MyPluginInfo.cs" />
-  </ItemGroup>
-
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
   </ItemGroup>
-  
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Void Crew\Void Crew_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -51,68 +49,61 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="VoidManager">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Void Crew\BepInEx\plugins\VoidManager.dll</HintPath>
+      <HintPath>..\..\VoidManager\VoidManager\bin\Debug\net472\VoidManager.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="mscorlib">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System.Core">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System.Data">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System.Drawing">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System.IO.Compression.FileSystem">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System.Numerics">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System.Runtime.Serialization">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System.Xml">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  
   <ItemGroup>
     <Reference Update="System.Xml.Linq">
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="powershell.exe -NonInteractive -ExecutionPolicy RemoteSigned -NoProfile -file &quot;$(ProjectDir)PreBuild.ps1&quot; $(OutDir) $(SolutionDir)" />
+  </Target>
 </Project>
